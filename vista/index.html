@@ -1,0 +1,138 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<title>Triqui</title>
+	</head>
+<body>
+    <form>
+    	<input type="hidden" id="turno" value="1" />
+        <input type="hidden" id="posicion_1" value="0" />
+        <input type="hidden" id="posicion_2" value="0" />
+        <input type="hidden" id="posicion_3" value="0" />
+        <input type="hidden" id="posicion_4" value="0" />
+        <input type="hidden" id="posicion_5" value="0" />
+        <input type="hidden" id="posicion_6" value="0" />
+        <input type="hidden" id="posicion_7" value="0" />
+        <input type="hidden" id="posicion_8" value="0" />
+        <input type="hidden" id="posicion_9" value="0" />
+        <input type="hidden" id="juego_terminado" value="0" />
+        <input type="hidden" id="victorias_j1" value="0" />
+        <input type="hidden" id="victorias_j2" value="0" />
+        <input type="hidden" id="empates" value="0" />
+        <div align="center">
+		<table align="center" border="1" style="padding:5px;">
+        	<tr>
+            	<td colspan="3" align="center" style="border:0px;">
+                	<label class="texto">Turno</label>
+            		<div id="turno_jugador">
+                    		<img src="../images/o.jpg" width="100" height="100" />
+                    </div>
+                </td>
+            </tr>
+        	<tr>
+            	<td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF;">
+                		<div id="imagen_1">
+	                        <img src="../images/blanco.png" width="100" height="100" id="1" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF;">
+                		<div id="imagen_2">
+	                        <img src="../images/blanco.png" width="100" height="100" id="2" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF; border-right-color:#FFF;">
+                		<div id="imagen_3">
+	                        <img src="../images/blanco.png" width="100" height="100" id="3" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+            </tr>
+            <tr>
+            	<td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF;">
+                		<div id="imagen_4">
+	                        <img src="../images/blanco.png" width="100" height="100" id="4" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF;">
+                		<div id="imagen_5">
+	                        <img src="../images/blanco.png" width="100" height="100" id="5" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF; border-right-color:#FFF;">
+                		<div id="imagen_6">
+	                        <img src="../images/blanco.png" width="100" height="100" id="6" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+            </tr>
+            <tr>
+            	<td style="border-style:solid; border-top-color:#FFF; border-bottom-color:#FFF; border-left-color:#FFF;">
+                		<div id="imagen_7">
+	                        <img src="../images/blanco.png" width="100" height="100" id="7" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF; border-bottom-color:#FFF;">
+                		<div id="imagen_8">
+	                        <img src="../images/blanco.png" width="100" height="100" id="8" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+                <td style="border-style:solid; border-top-color:#FFF; border-left-color:#FFF; border-bottom-color:#FFF; border-right-color:#FFF;">
+                		<div id="imagen_9">
+	                        <img src="../images/blanco.png" width="100" height="100" id="9" onclick="jugar(this.id);" />
+                        </div>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3" align="center" style="border:0px;">
+                	<input class="boton" type="button" id="juego_nuevo" onclick="juegoNuevo();" disabled="disabled" value="Juego Nuevo" />
+                    <input class="boton" type="button" onclick="resetearPuntaje();" value="Resetear Marcador" />
+            	</td>
+            </tr>
+        </table>
+				<table border="0">
+        <tr>
+        <td><img src="../images/o.jpg" title="Jugador 1" width="50" height="50" /></td>
+        <td>
+            <label class="texto">
+                Victorias Jugador 1:
+            </label>
+            <label class="victorias" id="ver_victorias_j1">
+                0
+            </label><br />
+            <label class="texto">
+                Derrotas Jugador 1:
+            </label>
+            <label class="derrotas" id="ver_derrotas_j1" >
+                0
+            </label><br />
+        </td>
+        <td>
+        	<label class="texto">
+            	Empates:
+            </label>
+            <label class="empates" id="ver_empates">
+            	0
+            </label><br />
+        </td>
+        <td>
+            <label class="texto">
+            	Victorias Jugador 2:
+            </label>
+            <label class="victorias" id="ver_victorias_j2">
+            	0
+            </label><br />
+            <label class="texto">
+            	Derrotas Jugador 2:
+            </label>
+            <label class="derrotas" id="ver_derrotas_j2">
+            	0
+            </label><br />
+        </td>
+        <td><img src="../images/x.png" title="Jugador 2" width="50" height="50" align="right" /></td>
+        </tr>
+        </table>
+        <hr width="50%" />
+        </div>
+    </form>
+		<script src="../js/script.js"></script>
+</body>
+</html>
